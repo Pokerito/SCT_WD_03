@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Tic-Tac-Toe: Neon Glass Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!--
+    README
+
+    This is a high-tech, accessible, production-quality Tic-Tac-Toe web app.
+
+    - Game logic: Game class in app.js
+    - AI: AI class in app.js (random, heuristic, minimax, trainable Q-table)
+    - UI: All DOM/UI logic in app.js
+    - Tutorial: Tutorial class in app.js
+    - History: History class in app.js
+    - Theme & Sound: ThemeManager and SoundManager in app.js
+    - Unit tests: Run runTests() in the browser console
+    - How to change AI/training: See AI class, especially trainQ and minimax methods
+    - How to add features: See TODOs in comments
+
+    All code is in app.js and styles.css. No external dependencies.
+  -->
+</head>
+<body>
+  <div id="particle-bg" aria-hidden="true"></div>
+  <main id="main-menu" class="glass">
+    <div class="logo neon-glow" aria-label="Tic-Tac-Toe Logo" tabindex="-1">✦</div>
+    <h1 class="neon-glow">Tic-Tac-Toe</h1>
+    <nav>
+      <button id="btn-pvc" class="menu-btn" aria-label="Player vs Computer">Player vs Computer</button>
+      <button id="btn-pvq" class="menu-btn" aria-label="Player vs AI (Trainable)">Player vs AI (Trainable)</button>
+      <button id="btn-pvp" class="menu-btn" aria-label="Player vs Player">Player vs Player</button>
+      <button id="btn-tutorial" class="menu-btn" aria-label="Tutorial">Tutorial</button>
+      <button id="btn-settings" class="menu-btn" aria-label="Settings">Settings</button>
+      <button id="btn-history" class="menu-btn" aria-label="View History">View History</button>
+    </nav>
+  </main>
+
+  <section id="game-section" class="glass hidden" aria-label="Game Board">
+    <header>
+      <div id="game-info">
+        <span id="player1-label"></span>
+        <span id="turn-indicator"></span>
+        <span id="player2-label"></span>
+      </div>
+      <div id="move-timer" class="hidden" aria-live="polite"></div>
+    </header>
+    <div id="board" role="grid" aria-label="Tic-Tac-Toe Board" tabindex="0"></div>
+    <div id="hint-bubble" class="hidden" aria-live="polite"></div>
+    <footer>
+      <button id="btn-undo" class="game-btn" aria-label="Undo Move">Undo</button>
+      <button id="btn-hint" class="game-btn" aria-label="Hint">Hint</button>
+      <button id="btn-restart" class="game-btn" aria-label="Restart">Restart</button>
+      <button id="btn-new" class="game-btn" aria-label="New Match">New Match</button>
+      <button id="btn-exit" class="game-btn" aria-label="Exit to Menu">Exit</button>
+    </footer>
+  </section>
+
+  <section id="settings-section" class="glass hidden" aria-label="Settings">
+    <h2>Settings</h2>
+    <div class="setting-row">
+      <label for="theme-toggle">Theme:</label>
+      <button id="theme-toggle" aria-label="Toggle Theme"></button>
+    </div>
+    <div class="setting-row">
+      <label for="sound-toggle">Sound:</label>
+      <button id="sound-toggle" aria-label="Toggle Sound"></button>
+    </div>
+    <div class="setting-row">
+      <label for="timer-toggle">Move Timer:</label>
+      <button id="timer-toggle" aria-label="Toggle Move Timer"></button>
+    </div>
+    <div class="setting-row">
+      <label for="vibration-toggle">Vibration:</label>
+      <button id="vibration-toggle" aria-label="Toggle Vibration"></button>
+    </div>
+    <button id="btn-settings-back" class="menu-btn">Back</button>
+  </section>
+
+  <section id="tutorial-section" class="glass hidden" aria-label="Tutorial"></section>
+  <section id="history-section" class="glass hidden" aria-label="Game History"></section>
+  <section id="train-section" class="glass hidden" aria-label="AI Training"></section>
+  <div id="modal-overlay" class="hidden" aria-modal="true" role="dialog"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
